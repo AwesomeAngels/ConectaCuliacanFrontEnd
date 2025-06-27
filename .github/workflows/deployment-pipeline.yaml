@@ -5,6 +5,14 @@ on:
       - develop
 
 jobs:
+
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check lint
+        run: npm run lint
+
   build:
     runs-on: ubuntu-22.04
     steps:

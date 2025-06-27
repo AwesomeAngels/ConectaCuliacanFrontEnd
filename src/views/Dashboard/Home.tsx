@@ -1,3 +1,4 @@
+/*
 import {useEffect, useState} from "react";
 import { useLogOutUserMutation } from "../../state/auth/authApi.ts";
 import Button from '@mui/material/Button';
@@ -35,3 +36,4 @@ function Home(){
 }
 
 export default Home;
+*/
