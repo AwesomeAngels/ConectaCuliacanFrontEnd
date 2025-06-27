@@ -1,0 +1,11 @@
+.transition-height{
+    transition: height .3s;
+}
+.transition-opacity{
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.transition-opacity-done{
+    opacity: 1;
+}
