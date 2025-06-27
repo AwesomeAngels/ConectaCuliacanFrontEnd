@@ -1,10 +1,8 @@
 name: Deployment-pipeline
 on:
   push:
-    paths:
-      - 'frontend/**'
     branches:
-      - production
+      - develop
 
 jobs:
   build:
