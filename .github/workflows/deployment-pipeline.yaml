@@ -10,9 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - name: Build The Application
+      - name: Get the repository
       - uses: actions/checkout@v4
-
-        with:
-          fetch-depth: 0
+      - name: Build the app
+        run: npm run build
 
