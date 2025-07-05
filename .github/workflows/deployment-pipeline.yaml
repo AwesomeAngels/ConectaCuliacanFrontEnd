@@ -4,25 +4,28 @@ on:
     branches:
       - develop
 jobs:
-  build:
+  build-and-push:
+    #Runner machine hosted by github
     runs-on: ubuntu-22.04
     steps:
+      #Get into the directory and install dependencies
       - uses: actions/checkout@v4
       - name: Install Dependencies
         run: npm ci
-
+      #Test lint
       - name: Run Lint
         run: npm run lint
-
+      #Build the app for production
       - name: Build the app
         run: npm run build
-
-      - name: Echo username
-        run: echo "${{ env.DOCKERNAME }}"
-
+      #Log into docker hub (Angel main account)
       - name: Log into docker
         uses: docker/login-action@v3
-
         with:
           username: ${{ vars.DOCKERNAME }}
           password: ${{ secrets.DOCKERPASSWORD }}
+
+      #Build the image for production
+      - name: Build the image for production
+        run: docker build -t front:stable .
+
