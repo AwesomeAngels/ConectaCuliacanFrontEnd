@@ -29,3 +29,10 @@ jobs:
       - name: Build the image for production
         run: docker build -t front:stable .
 
+      #Tag the image for push into docker hub
+      - name: Tag the image for pushing into docker hub
+        run: docker tag front:stable ${{vars.DOCKERNAME}}/conectasinaloa:front
+
+      - name: Push the image
+        run: docker push ${{vars.DOCKERNAME}}/conectasinaloa:front
+
