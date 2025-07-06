@@ -36,7 +36,7 @@ jobs:
       - name: Push the image
         run: docker push ${{vars.DOCKERNAME}}/conectasinaloa:front
 
-          
+
   deploy:
     runs-on: ubuntu-22.04
     needs: build-and-push
@@ -48,3 +48,7 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan "${{secrets.SERVERIP}}" > ~/.ssh/known_hosts
           sudo apt-get install sshpass
+
+      - name: Deploy to server
+        run: |
+          ssh "${{secrets.SERVER}}"
