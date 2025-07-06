@@ -19,3 +19,4 @@ jobs:
       - name: Deploy to server
         run: |
           ssh -v "${{secrets.SERVER}}"
+
