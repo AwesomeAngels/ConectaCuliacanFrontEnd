@@ -35,8 +35,6 @@ jobs:
 
       - name: Push the image
         run: docker push ${{vars.DOCKERNAME}}/conectasinaloa:front
-
-
   deploy:
     runs-on: ubuntu-22.04
     needs: build-and-push
