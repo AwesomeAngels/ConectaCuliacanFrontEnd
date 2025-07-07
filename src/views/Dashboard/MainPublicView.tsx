@@ -17,7 +17,7 @@ function DashBoardLayoutView(){
             <Box sx={{ boxShadow: 1 }}>
                 <Container>
                     <Box>
-                        <Typography fontWeight={'normal'} textAlign='center' variant="h4">Tu mejor opcion para conseguir un trabajo</Typography>
+                        <Typography fontWeight={'normal'} textAlign='center' variant="h4">Tu mejor opcion para conseguir un trabajo + ssh actualizado!!!</Typography>
                         <Typography fontWeight={'normal'} className="text-gray-600" textAlign='center' variant="h6">Muchas opciones para conseguir trabajo</Typography>
                     </Box>
                     <Box display={`flex`} className={md ? "flex-row" : "flex-col"}>
