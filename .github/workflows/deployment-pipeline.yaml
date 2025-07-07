@@ -51,4 +51,7 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh "${{secrets.SERVER}}"
+          ssh -v "${{secrets.SERVER}}" << 'EOF'
+            cd /srv/conectasinaloa/
+            docker compose up -d
+          EOF
