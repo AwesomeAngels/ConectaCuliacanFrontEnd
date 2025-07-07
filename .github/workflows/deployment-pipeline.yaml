@@ -52,5 +52,6 @@ jobs:
         run: |
           ssh -v "${{secrets.SERVER}}" << 'EOF'
             cd /srv/conectasinaloa/
+            docker compose pull
             docker compose up -d
           EOF

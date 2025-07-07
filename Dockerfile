@@ -7,7 +7,6 @@ RUN npm run build
 
 #Production stage
 FROM nginx:1.27.5-alpine AS production
-COPY nginx.conf /etc/nginx/conf.d
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80 443
